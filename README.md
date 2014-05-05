@@ -49,7 +49,7 @@ public class MouseTrapExample implements EntryPoint {
 
 ```
 
-4) Find more code the  <a href="">Examples</a>
+4) Find more code in the  <a href="https://github.com/ahome-it/ahome-mousetrap/tree/master/ahome-mousetrap/examples/com/ait/toolkit/mousetrap/examples">Examples folder</a>
 
 5) Learn more about our Open Source tools  <a href="http://opensource.ahome-it.com/">HERE</a>
 
