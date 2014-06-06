@@ -20,9 +20,6 @@ import com.google.gwt.resources.client.TextResource;
 
 public interface MouseTrapResources extends ClientBundle {
 
-	@Source("mt.js")
-	public TextResource js();
-
 	@Source("mt.min.js")
 	public TextResource jsMin();
 
