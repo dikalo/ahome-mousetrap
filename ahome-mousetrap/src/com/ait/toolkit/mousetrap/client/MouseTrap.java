@@ -48,24 +48,24 @@ public class MouseTrap {
 	 *            , the callback
 	 */
 	public static native void bind(String key, MouseTrapHandler callback)/*-{
-																			$wnd.Mousetrap
-																			.bind(
-																			key,
-																			$entry(function(e, c) {
-																			var event = @com.ait.toolkit.mousetrap.client.MouseTrapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-																			callback.@com.ait.toolkit.mousetrap.client.MouseTrapHandler::onEvent(Lcom/ait/toolkit/mousetrap/client/MouseTrapEvent;Ljava/lang/String;)(event,c);
-																			}));
-																			}-*/;
+		$wnd.Mousetrap
+				.bind(
+						key,
+						$entry(function(e, c) {
+							var event = @com.ait.toolkit.mousetrap.client.MouseTrapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							callback.@com.ait.toolkit.mousetrap.client.MouseTrapHandler::onEvent(Lcom/ait/toolkit/mousetrap/client/MouseTrapEvent;Ljava/lang/String;)(event,c);
+						}));
+	}-*/;
 
 	public static native void bindGlobal(String key, MouseTrapHandler callback)/*-{
-																				$wnd.Mousetrap
-																				.bindGlobal(
-																				key,
-																				$entry(function(e, c) {
-																				var event = @com.ait.toolkit.mousetrap.client.MouseTrapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-																				callback.@com.ait.toolkit.mousetrap.client.MouseTrapHandler::onEvent(Lcom/ait/toolkit/mousetrap/client/MouseTrapEvent;Ljava/lang/String;)(event,c);
-																				}));
-																				}-*/;
+		$wnd.Mousetrap
+				.bindGlobal(
+						values,
+						$entry(function(e, c) {
+							var event = @com.ait.toolkit.mousetrap.client.MouseTrapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							callback.@com.ait.toolkit.mousetrap.client.MouseTrapHandler::onEvent(Lcom/ait/toolkit/mousetrap/client/MouseTrapEvent;Ljava/lang/String;)(event,c);
+						}));
+	}-*/;
 
 	/**
 	 * This will bind a specified keyboard command to a callback method. There is a third argument you can use to specify the type of event to listen for. It can be keypress,
@@ -75,24 +75,24 @@ public class MouseTrap {
 	 * keydown.
 	 */
 	public static native void bind(String key, MouseTrapHandler callback, String nativeEvent)/*-{
-																								$wnd.Mousetrap
-																								.bind(
-																								key,
-																								$entry(function(e, c) {
-																								var event = @com.ait.toolkit.mousetrap.client.MouseTrapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-																								callback.@com.ait.toolkit.mousetrap.client.MouseTrapHandler::onEvent(Lcom/ait/toolkit/mousetrap/client/MouseTrapEvent;Ljava/lang/String;)(event,c);
-																								}), nativeEvent);
-																								}-*/;
+		$wnd.Mousetrap
+				.bind(
+						key,
+						$entry(function(e, c) {
+							var event = @com.ait.toolkit.mousetrap.client.MouseTrapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							callback.@com.ait.toolkit.mousetrap.client.MouseTrapHandler::onEvent(Lcom/ait/toolkit/mousetrap/client/MouseTrapEvent;Ljava/lang/String;)(event,c);
+						}), nativeEvent);
+	}-*/;
 
 	public static native void bindGlobal(String key, MouseTrapHandler callback, String nativeEvent)/*-{
-																									$wnd.Mousetrap
-																									.bindGlobal(
-																									key,
-																									$entry(function(e, c) {
-																									var event = @com.ait.toolkit.mousetrap.client.MouseTrapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-																									callback.@com.ait.toolkit.mousetrap.client.MouseTrapHandler::onEvent(Lcom/ait/toolkit/mousetrap/client/MouseTrapEvent;Ljava/lang/String;)(event,c);
-																									}), nativeEvent);
-																									}-*/;
+		$wnd.Mousetrap
+				.bindGlobal(
+						key,
+						$entry(function(e, c) {
+							var event = @com.ait.toolkit.mousetrap.client.MouseTrapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							callback.@com.ait.toolkit.mousetrap.client.MouseTrapHandler::onEvent(Lcom/ait/toolkit/mousetrap/client/MouseTrapEvent;Ljava/lang/String;)(event,c);
+						}), nativeEvent);
+	}-*/;
 
 	/**
 	 * This will bind a specified keyboard command to a callback method. There is a third argument you can use to specify the type of event to listen for. It can be keypress,
@@ -102,47 +102,63 @@ public class MouseTrap {
 	 * keydown.
 	 */
 	public static native void bind(JsArrayString keys, MouseTrapHandler callback, String nativeEvent)/*-{
-																										$wnd.Mousetrap
-																										.bind(
-																										keys,
-																										$entry(function(e, c) {
-																										var event = @com.ait.toolkit.mousetrap.client.MouseTrapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-																										callback.@com.ait.toolkit.mousetrap.client.MouseTrapHandler::onEvent(Lcom/ait/toolkit/mousetrap/client/MouseTrapEvent;Ljava/lang/String;)(event,c);
-																										}), nativeEvent);
-																										}-*/;
+		var values = new $wnd.Array();
+		for (v in keys) {
+			values.push(v);
+		}
+		$wnd.Mousetrap
+				.bind(
+						values,
+						$entry(function(e, c) {
+							var event = @com.ait.toolkit.mousetrap.client.MouseTrapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							callback.@com.ait.toolkit.mousetrap.client.MouseTrapHandler::onEvent(Lcom/ait/toolkit/mousetrap/client/MouseTrapEvent;Ljava/lang/String;)(event,c);
+						}), nativeEvent);
+	}-*/;
 
 	public static native void bindGlobal(JsArrayString keys, MouseTrapHandler callback, String nativeEvent)/*-{
-																											$wnd.Mousetrap
-																											.bindGlobal(
-																											keys,
-																											$entry(function(e, c) {
-																											var event = @com.ait.toolkit.mousetrap.client.MouseTrapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-																											callback.@com.ait.toolkit.mousetrap.client.MouseTrapHandler::onEvent(Lcom/ait/toolkit/mousetrap/client/MouseTrapEvent;Ljava/lang/String;)(event,c);
-																											}), nativeEvent);
-																											}-*/;
+		var values = new $wnd.Array();
+		for (v in keys) {
+			values.push(keys[v]);
+		}
+		$wnd.Mousetrap
+				.bindGlobal(
+						values,
+						$entry(function(e, c) {
+							var event = @com.ait.toolkit.mousetrap.client.MouseTrapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							callback.@com.ait.toolkit.mousetrap.client.MouseTrapHandler::onEvent(Lcom/ait/toolkit/mousetrap/client/MouseTrapEvent;Ljava/lang/String;)(event,c);
+						}), nativeEvent);
+	}-*/;
 
 	/**
 	 * If you want to bind multiple key commands to the same callback you can pass in an array for the first argument
 	 */
 	public static native void bind(JsArrayString keys, MouseTrapHandler callback)/*-{
-																					$wnd.Mousetrap
-																					.bind(
-																					keys,
-																					$entry(function(e, c) {
-																					var event = @com.ait.toolkit.mousetrap.client.MouseTrapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-																					callback.@com.ait.toolkit.mousetrap.client.MouseTrapHandler::onEvent(Lcom/ait/toolkit/mousetrap/client/MouseTrapEvent;Ljava/lang/String;)(event,c);
-																					}));
-																					}-*/;
+		var values = new $wnd.Array();
+		for (v in keys) {
+			values.push(keys[v]);
+		}
+		$wnd.Mousetrap
+				.bind(
+						values,
+						$entry(function(e, c) {
+							var event = @com.ait.toolkit.mousetrap.client.MouseTrapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							callback.@com.ait.toolkit.mousetrap.client.MouseTrapHandler::onEvent(Lcom/ait/toolkit/mousetrap/client/MouseTrapEvent;Ljava/lang/String;)(event,c);
+						}));
+	}-*/;
 
 	public static native void bindGlobal(JsArrayString keys, MouseTrapHandler callback)/*-{
-																						$wnd.Mousetrap
-																						.bindGlobal(
-																						keys,
-																						$entry(function(e, c) {
-																						var event = @com.ait.toolkit.mousetrap.client.MouseTrapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-																						callback.@com.ait.toolkit.mousetrap.client.MouseTrapHandler::onEvent(Lcom/ait/toolkit/mousetrap/client/MouseTrapEvent;Ljava/lang/String;)(event,c);
-																						}));
-																						}-*/;
+		var values = new $wnd.Array();
+		for (v in keys) {
+			values.push(keys[v]);
+		}
+		$wnd.Mousetrap
+				.bindGlobal(
+						values,
+						$entry(function(e, c) {
+							var event = @com.ait.toolkit.mousetrap.client.MouseTrapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							callback.@com.ait.toolkit.mousetrap.client.MouseTrapHandler::onEvent(Lcom/ait/toolkit/mousetrap/client/MouseTrapEvent;Ljava/lang/String;)(event,c);
+						}));
+	}-*/;
 
 	/**
 	 * If you want to bind multiple key commands to the same callback you can pass in an array for the first argument
@@ -168,8 +184,8 @@ public class MouseTrap {
 	 * <code>bind</code>.
 	 */
 	public static native void unbind(String key)/*-{
-												$wnd.Mousetrap.unbind(key);
-												}-*/;
+		$wnd.Mousetrap.unbind(key);
+	}-*/;
 
 	/**
 	 * This method will unbind a single keyboard event or an array of keyboard events. You should pass in the key combination exactly as it was passed in originally to
@@ -178,8 +194,8 @@ public class MouseTrap {
 	 * Note that this is not actually triggering a key event in the browser. It is simply firing the event you bound to that key within mousetrap
 	 */
 	public static native void trigger(String key)/*-{
-													$wnd.Mousetrap.trigger(key);
-													}-*/;
+		$wnd.Mousetrap.trigger(key);
+	}-*/;
 
 	/**
 	 * This method will unbind a single keyboard event or an array of keyboard events. You should pass in the key combination exactly as it was passed in originally to
@@ -188,8 +204,8 @@ public class MouseTrap {
 	 * Note that this is not actually triggering a key event in the browser. It is simply firing the event you bound to that key within mousetrap
 	 */
 	public static native void trigger(String key, String event)/*-{
-																$wnd.Mousetrap.trigger(key, event);
-																}-*/;
+		$wnd.Mousetrap.trigger(key, event);
+	}-*/;
 
 	/**
 	 * The reset method will remove anything you have bound to mousetrap. This can be useful if you want to change contexts in your application without refreshing the page in your
@@ -199,28 +215,28 @@ public class MouseTrap {
 	 * array to be empty.
 	 */
 	public static native void reset()/*-{
-										$wnd.Mousetrap.reset();
-										}-*/;
+		$wnd.Mousetrap.reset();
+	}-*/;
 
 	/**
 	 * stop Mousetrap events from firing
 	 */
 	public static native void pause()/*-{
-										$wnd.Mousetrap.pause();
-										}-*/;
+		$wnd.Mousetrap.pause();
+	}-*/;
 
 	/**
 	 * allow Mousetrap events to fire again
 	 */
 	public static native void unpause()/*-{
-										$wnd.Mousetrap.unpause();
-										}-*/;
+		$wnd.Mousetrap.unpause();
+	}-*/;
 
 	static native boolean isLoaded()/*-{
-									if (typeof $wnd.Mousetrap === "undefined" || $wnd.Mousetrap === null) {
-									return false;
-									}
-									return true;
-									}-*/;
+		if (typeof $wnd.Mousetrap === "undefined" || $wnd.Mousetrap === null) {
+			return false;
+		}
+		return true;
+	}-*/;
 
 }
