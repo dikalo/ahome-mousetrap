@@ -19,7 +19,7 @@ Get high quality support through Ahomé (Note that all Ahomé Tools are FREE to 
 
 2)  Inherit the ahome-enquire module
 ```xml
-<inherits name='com.ait.toolkit.mouseTrap.MouseTrap'/>
+<inherits name='com.ait.toolkit.mousetrap.MouseTrap'/>
 ```
 
 3)  Start coding
